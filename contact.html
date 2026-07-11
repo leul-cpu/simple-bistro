@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Contact — Simple Bistro | Get in Touch</title>
+  <meta name="description" content="Contact Simple Bistro in Addis Ababa. Send a message, leave feedback, or rate your experience. Two branches — Summit & Bole.">
+  <meta name="theme-color" content="#1b1712">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta property="og:title" content="Contact — Simple Bistro">
+  <meta property="og:description" content="Get in touch with Simple Bistro. Send a message or leave feedback.">
+  <meta property="og:image" content="images/hero.jpg">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,900&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <div class="logo-mark">SB</div>
+        <span class="logo-wordmark">Simple Bistro</span>
+      </a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="locations.html">Locations</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="book.html">Book</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-nav">
+    <a href="index.html">Home</a>
+    <a href="menu.html">Menu</a>
+    <a href="locations.html">Locations</a>
+    <a href="about.html">About</a>
+    <a href="book.html">Book</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <div class="page-header">
+    <div class="eyebrow">Say Hello</div>
+    <h1>Contact Us</h1>
+    <p>Got a question, feedback, or just want to say what's up? We read every single one of these.</p>
+  </div>
+
+  <section style="padding-top:1rem;max-width:700px;margin:0 auto;">
+    <div class="contact-card">
+      <h3>Get in Touch</h3>
+      <div class="contact-detail">
+        <span style="font-size:1.1rem;">&#9993;</span>
+        <a href="mailto:simplebistrosince2016@gmail.com">simplebistrosince2016@gmail.com</a>
+      </div>
+      <div class="contact-detail">
+        <span style="font-size:1.1rem;">&#9742;</span>
+        <a href="tel:+251986347372">098 634 7372</a>
+      </div>
+      <div class="contact-detail">
+        <span style="font-size:1.1rem;">&#128205;</span>
+        <span>Summit: 2V52+RC9, Addis Ababa</span>
+      </div>
+      <div class="contact-detail">
+        <span style="font-size:1.1rem;">&#128205;</span>
+        <span>Bole: Bole area, Addis Ababa</span>
+      </div>
+      <div class="social-links">
+        <a href="https://facebook.com/simplebistro2016" target="_blank" rel="noopener" class="social-link">Facebook</a>
+        <a href="https://instagram.com/simplebistro2016" target="_blank" rel="noopener" class="social-link">Instagram</a>
+        <a href="https://t.me/simplebistro" target="_blank" rel="noopener" class="social-link">Telegram</a>
+        <a href="https://www.google.com/maps?q=9.0118,38.8513" target="_blank" rel="noopener" class="social-link">Google Maps</a>
+      </div>
+    </div>
+
+    <!-- ===== CONTACT TABS ===== -->
+    <div class="contact-tabs">
+      <button class="contact-tab active" data-panel="general">General Inquiry</button>
+      <button class="contact-tab" data-panel="feedback">Visit Feedback</button>
+    </div>
+
+    <!-- ===== GENERAL INQUIRY FORM ===== -->
+    <div class="contact-form-panel active" id="panel-general">
+      <form id="general-form" novalidate>
+        <div class="form-group">
+          <label for="g-name">Name *</label>
+          <input type="text" id="g-name" name="name" placeholder="Your name" required autocomplete="name">
+        </div>
+        <div class="form-group">
+          <label for="g-email">Email *</label>
+          <input type="email" id="g-email" name="email" placeholder="you@email.com" required autocomplete="email">
+        </div>
+        <div class="form-group">
+          <label for="g-message">Message *</label>
+          <textarea id="g-message" name="message" placeholder="What's on your mind?" required></textarea>
+        </div>
+        <div class="form-submit-area">
+          <button type="submit" class="btn-primary">Send Message</button>
+        </div>
+        <div class="form-msg" id="general-msg"></div>
+      </form>
+    </div>
+
+    <!-- ===== VISIT FEEDBACK FORM ===== -->
+    <div class="contact-form-panel" id="panel-feedback">
+      <form id="feedback-form" novalidate>
+        <div class="form-group">
+          <label for="f-name">Name *</label>
+          <input type="text" id="f-name" name="name" placeholder="Your name" required autocomplete="name">
+        </div>
+        <div class="form-group">
+          <label for="f-branch">Branch Visited *</label>
+          <select id="f-branch" name="branch" required>
+            <option value="" disabled selected>Which branch?</option>
+            <option value="Summit">Summit</option>
+            <option value="Bole">Bole</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="f-date">Visit Date *</label>
+          <input type="date" id="f-date" name="date" required>
+        </div>
+        <div class="form-group">
+          <label>Rating *</label>
+          <div class="star-rating" id="star-rating">
+            <button type="button" data-star="1" aria-label="1 star">&#9733;</button>
+            <button type="button" data-star="2" aria-label="2 stars">&#9733;</button>
+            <button type="button" data-star="3" aria-label="3 stars">&#9733;</button>
+            <button type="button" data-star="4" aria-label="4 stars">&#9733;</button>
+            <button type="button" data-star="5" aria-label="5 stars">&#9733;</button>
+          </div>
+          <span class="mono-sm" id="rating-label" style="color:var(--cream-dim);margin-top:0.3rem;display:block;">Tap to rate (1-5)</span>
+        </div>
+        <div class="form-group">
+          <label for="f-comments">Comments *</label>
+          <textarea id="f-comments" name="comments" placeholder="Tell us about your visit..." required></textarea>
+        </div>
+        <div class="form-submit-area">
+          <button type="submit" class="btn-primary">Submit Feedback</button>
+        </div>
+        <div class="form-msg" id="feedback-msg"></div>
+      </form>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">Simple Bistro</div>
+      <div class="footer-tagline">Addis Ababa, Ethiopia · Serving since 2016</div>
+      <div class="footer-socials">
+        <a href="https://facebook.com/simplebistro2016" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://instagram.com/simplebistro2016" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://t.me/simplebistro" target="_blank" rel="noopener">Telegram</a>
+        <a href="https://www.google.com/maps?q=9.0118,38.8513" target="_blank" rel="noopener">Google Maps</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    /* ===== CONTACT TAB SWITCHING ===== */
+    document.addEventListener('DOMContentLoaded', () => {
+      const tabs = document.querySelectorAll('.contact-tab');
+      const panels = document.querySelectorAll('.contact-form-panel');
+
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          tabs.forEach(t => t.classList.remove('active'));
+          tab.classList.add('active');
+          panels.forEach(p => p.classList.remove('active'));
+          document.getElementById('panel-' + tab.dataset.panel).classList.add('active');
+        });
+      });
+
+      /* ===== STAR RATING — click only (no hover on mobile) ===== */
+      let currentRating = 0;
+      const stars = document.querySelectorAll('#star-rating button');
+      const ratingLabel = document.getElementById('rating-label');
+
+      stars.forEach(star => {
+        star.addEventListener('click', () => {
+          currentRating = parseInt(star.dataset.star);
+          updateStars(currentRating);
+        });
+      });
+
+      function updateStars(rating) {
+        stars.forEach(s => {
+          if (parseInt(s.dataset.star) <= rating) {
+            s.classList.add('filled');
+          } else {
+            s.classList.remove('filled');
+          }
+        });
+        const labels = ['', 'Poor', 'Fair', 'Good', 'Great', 'Excellent!'];
+        ratingLabel.textContent = rating > 0 ? labels[rating] : 'Tap to rate (1-5)';
+      }
+
+      /* ===== GENERAL FORM — mailto fallback ===== */
+      const generalForm = document.getElementById('general-form');
+      const generalMsg = document.getElementById('general-msg');
+
+      generalForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = generalForm.elements['name'].value.trim();
+        const email = generalForm.elements['email'].value.trim();
+        const message = generalForm.elements['message'].value.trim();
+
+        if (!name || !email || !message) {
+          generalMsg.textContent = 'Please fill in all required fields.';
+          generalMsg.className = 'form-msg error show';
+          return;
+        }
+
+        const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
+        const subject = encodeURIComponent(`General Inquiry: ${name}`);
+        const bodyEncoded = encodeURIComponent(body);
+        window.location.href = `mailto:simplebistrosince2016@gmail.com?subject=${subject}&body=${bodyEncoded}`;
+
+        generalMsg.textContent = "Thanks for reaching out — we'll get back to you soon!";
+        generalMsg.className = 'form-msg success show';
+      });
+
+      /* ===== FEEDBACK FORM — mailto fallback ===== */
+      const feedbackForm = document.getElementById('feedback-form');
+      const feedbackMsg = document.getElementById('feedback-msg');
+
+      feedbackForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = feedbackForm.elements['name'].value.trim();
+        const branch = feedbackForm.elements['branch'].value;
+        const date = feedbackForm.elements['date'].value;
+        const comments = feedbackForm.elements['comments'].value.trim();
+
+        if (!name || !branch || !date || !comments || currentRating === 0) {
+          feedbackMsg.textContent = 'Please fill in all required fields and select a rating.';
+          feedbackMsg.className = 'form-msg error show';
+          return;
+        }
+
+        const body = `Name: ${name}\nBranch: ${branch}\nVisit Date: ${date}\nRating: ${currentRating}/5\n\nComments:\n${comments}`;
+        const subject = encodeURIComponent(`Feedback: Simple Bistro ${branch}`);
+        const bodyEncoded = encodeURIComponent(body);
+        window.location.href = `mailto:simplebistrosince2016@gmail.com?subject=${subject}&body=${bodyEncoded}`;
+
+        feedbackMsg.textContent = "Thanks — we read every one of these ourselves";
+        feedbackMsg.className = 'form-msg success show';
+      });
+    });
+  </script>
+  <script src="nav.js"></script>
+</body>
+</html>

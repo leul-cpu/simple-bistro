@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Simple Bistro — Flame-Grilled Burgers in Addis Ababa</title>
+  <meta name="description" content="Simple Bistro: bold, flame-grilled burgers since 2016. Two branches in Addis Ababa — Summit & Bole. Come hungry, leave happy.">
+  <meta name="theme-color" content="#1b1712">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta property="og:title" content="Simple Bistro — Flame-Grilled Burgers in Addis Ababa">
+  <meta property="og:description" content="Bold burgers, flame-grilled since 2016. Two branches in Addis Ababa, Ethiopia. Come hungry, leave happy.">
+  <meta property="og:image" content="images/hero.jpg">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,900&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <div class="logo-mark">SB</div>
+        <span class="logo-wordmark">Simple Bistro</span>
+      </a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="locations.html">Locations</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="book.html">Book</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-nav">
+    <a href="index.html">Home</a>
+    <a href="menu.html">Menu</a>
+    <a href="locations.html">Locations</a>
+    <a href="about.html">About</a>
+    <a href="book.html">Book</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="hero-bg" style="background-image: url('hero.jpg');"></div>
+    <div class="hero-content">
+      <h1>Simple Bistro<br><span>Burgers.</span></h1>
+      <p class="hero-tagline">A taste that lasts forever...</p>
+      <div class="hero-ctas">
+        <a href="book.html" class="btn-primary">Order — Summit</a>
+        <a href="book.html" class="btn-ghost">Order — Bole</a>
+      </div>
+      <div class="hero-branches">
+        <a href="locations.html" class="hero-branch-link"><span class="dot"></span> Summit Branch</a>
+        <a href="locations.html" class="hero-branch-link"><span class="dot"></span> Bole Branch</a>
+        <a href="book.html" class="hero-branch-link"><span class="dot"></span> Delivery Info</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT PREVIEW ===== -->
+  <section>
+    <div class="about-preview">
+      <div class="about-preview-text">
+        <div class="eyebrow">Our Story</div>
+        <h2>Flame-Grilled Since 2016</h2>
+        <p>We started Simple Bistro with one obsession: the perfect burger. No shortcuts, no gimmicks — just real flame-grilled patties, bold flavors, and a vibe that keeps you coming back. From a single spot in Summit to two thriving branches across Addis Ababa, we've been serving bold burgers and bold energy every single day.</p>
+        <a href="about.html" class="btn-ghost" style="font-size:0.85rem; width:auto; display:inline-flex;">Read our full story</a>
+      </div>
+      <div class="about-preview-img">
+        <img src="gourmet.jpg" alt="Simple Bistro gourmet burger">
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MENU PREVIEW ===== -->
+  <section class="section-alt">
+    <div class="eyebrow">Our Menu</div>
+    <h2>Crave-Worthy Classics</h2>
+    <div class="menu-grid" style="margin-top:1.5rem;">
+      <!-- Ticket 01 -->
+      <div class="ticket-card" data-tag="signature">
+        <img src="grill.jpg" alt="Texas Style Burger" class="ticket-card-img">
+        <div class="ticket-perforation"></div>
+        <div class="ticket-card-body">
+          <div class="ticket-tag">Signature</div>
+          <div class="ticket-name">Texas Style Burger</div>
+          <div class="ticket-price-row">
+            <span class="ticket-price">680 birr</span>
+          </div>
+        </div>
+      </div>
+      <!-- Ticket 02 -->
+      <div class="ticket-card" data-tag="wings">
+        <img src="wings.jpg" alt="BBQ Chicken Wing" class="ticket-card-img">
+        <div class="ticket-perforation"></div>
+        <div class="ticket-card-body">
+          <div class="ticket-tag">Wings</div>
+          <div class="ticket-name">BBQ Chicken Wing</div>
+          <div class="ticket-price-row">
+            <span class="ticket-price">700 birr</span>
+          </div>
+        </div>
+      </div>
+      <!-- Ticket 03 -->
+      <div class="ticket-card" data-tag="house-special">
+        <img src="cheeseburger.jpg" alt="Chicken Beef Junkie" class="ticket-card-img">
+        <div class="ticket-perforation"></div>
+        <div class="ticket-card-body">
+          <div class="ticket-tag">House Special</div>
+          <div class="ticket-name">Chicken Beef Junkie</div>
+          <div class="ticket-price-row">
+            <span class="ticket-price">830 birr</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:1.8rem;">
+      <a href="menu.html" class="btn-primary" style="font-size:0.85rem; width:auto; display:inline-flex;">View full menu</a>
+    </div>
+  </section>
+
+  <!-- ===== LOCATIONS PREVIEW ===== -->
+  <section>
+    <div class="eyebrow">Find Us</div>
+    <h2>Two Spots, One Standard</h2>
+    <div class="location-grid">
+      <div class="location-card">
+        <h3>Summit Branch</h3>
+        <p>2V52+RC9, Addis Ababa, Ethiopia</p>
+        <div class="services">
+          <span>Dine-in</span><span>Takeaway</span><span>Delivery</span>
+        </div>
+        <p><a href="tel:+251938819696" style="color:var(--mustard);text-decoration:none;font-weight:600;">+251 93 881 9696</a></p>
+      </div>
+      <div class="location-card">
+        <h3>Bole Branch</h3>
+        <p>Bole area, Addis Ababa, Ethiopia</p>
+        <div class="services">
+          <span>Dine-in</span><span>Takeaway</span><span>Delivery</span>
+        </div>
+        <p><a href="tel:+251986347372" style="color:var(--mustard);text-decoration:none;font-weight:600;">+251 98 634 7372</a></p>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:1.8rem;">
+      <a href="locations.html" class="btn-ghost" style="font-size:0.85rem; width:auto; display:inline-flex;">See full locations</a>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">Simple Bistro</div>
+      <div class="footer-tagline">Addis Ababa, Ethiopia · Serving since 2016</div>
+      <div class="footer-socials">
+        <a href="https://facebook.com/simplebistro2016" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://instagram.com/simplebistro2016" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://t.me/simplebistro" target="_blank" rel="noopener">Telegram</a>
+        <a href="https://www.google.com/maps?q=9.0118,38.8513" target="_blank" rel="noopener">Google Maps</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="nav.js"></script>
+</body>
+</html>

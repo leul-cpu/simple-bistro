@@ -1,0 +1,1282 @@
+/* ============================================
+   Simple Bistro — style.css
+   MOBILE-FIRST DESIGN SYSTEM
+   Base styles = mobile (320px+)
+   Media queries = min-width scale-up
+   Burgers · Addis Ababa · Since 2016
+   ============================================ */
+
+/* --- RESET --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: 'Space Grotesk', sans-serif;
+  background: var(--bg);
+  color: var(--cream);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+/* --- DESIGN SYSTEM COLORS --- */
+:root {
+  --bg: #1b1712;
+  --bg-card: #241e17;
+  --bg-card-hi: #2c241a;
+  --line: rgba(245, 237, 224, 0.14);
+  --cream: #f5ede0;
+  --cream-dim: rgba(245, 237, 224, 0.62);
+  --brick: #b23a2e;
+  --brick-hi: #d24c3c;
+  --mustard: #e8a33d;
+  --mustard-dim: #c8872b;
+}
+
+/* ==========================================
+   TYPOGRAPHY — Mobile Base
+   ========================================== */
+h1, h2, h3, h4, h5 {
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+
+h1 { font-size: 2.4rem; font-weight: 900; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.3rem; }
+
+p { color: var(--cream-dim); font-size: 0.95rem; }
+
+/* --- MONO UTILITIES --- */
+.mono {
+  font-family: 'JetBrains Mono', monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.78rem;
+}
+
+.mono-sm {
+  font-family: 'JetBrains Mono', monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.68rem;
+}
+
+/* --- EYEBROW LABEL --- */
+.eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.7rem;
+  color: var(--mustard);
+  margin-bottom: 0.5rem;
+}
+
+.eyebrow::before {
+  content: "— ";
+}
+
+/* ==========================================
+   BUTTONS — Touch-friendly on mobile
+   ========================================== */
+.btn-primary, .btn-ghost {
+  display: block;
+  width: 100%;
+  padding: 1rem 2rem;
+  border-radius: 6px;
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  cursor: pointer;
+  border: 2px solid transparent;
+  text-align: center;
+  min-height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.15s;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.btn-primary {
+  background: var(--brick);
+  color: var(--cream);
+  border-color: var(--brick);
+}
+
+.btn-primary:active {
+  background: var(--brick-hi);
+  border-color: var(--brick-hi);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--cream);
+  border-color: var(--line);
+}
+
+.btn-ghost:active {
+  border-color: var(--cream);
+}
+
+/* ==========================================
+   HEADER / NAV — Mobile First
+   ========================================== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(27, 23, 18, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--line);
+}
+
+.header-inner {
+  padding: 0 1rem;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: var(--cream);
+}
+
+.logo-mark {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--brick);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Fraunces', serif;
+  font-weight: 900;
+  font-size: 0.85rem;
+  color: var(--cream);
+  flex-shrink: 0;
+}
+
+.logo-wordmark {
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+/* --- DESKTOP NAV — hidden on mobile --- */
+.nav-links {
+  display: none;
+  list-style: none;
+}
+
+/* --- HAMBURGER — visible on mobile --- */
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  min-width: 44px;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+}
+
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--cream);
+  border-radius: 2px;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.hamburger.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* --- MOBILE NAV OVERLAY --- */
+.mobile-nav {
+  display: none;
+  position: fixed;
+  inset: 0;
+  top: 60px;
+  background: rgba(27, 23, 18, 0.97);
+  z-index: 99;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.mobile-nav.open {
+  display: flex;
+}
+
+.mobile-nav a {
+  color: var(--cream);
+  text-decoration: none;
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  transition: color 0.2s;
+  padding: 0.5rem 1rem;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+}
+
+.mobile-nav a:active {
+  color: var(--brick);
+}
+
+/* ==========================================
+   SECTIONS — Mobile First
+   ========================================== */
+section {
+  padding: 3rem 1rem;
+  width: 100%;
+}
+
+section.section-alt {
+  background: var(--bg-card);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.page-header {
+  padding: 3rem 1rem 2rem;
+  text-align: center;
+}
+
+.page-header h1 {
+  margin-bottom: 0.4rem;
+}
+
+.page-header p {
+  font-size: 0.95rem;
+}
+
+/* ==========================================
+   HERO — Mobile First (stacked, full bleed)
+   ========================================== */
+.hero {
+  position: relative;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(27, 23, 18, 0.35) 0%,
+    rgba(27, 23, 18, 0.92) 100%
+  );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 400px;
+  padding: 0 1rem;
+}
+
+.hero h1 {
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+}
+
+.hero h1 span {
+  color: var(--brick);
+}
+
+.hero-tagline {
+  font-size: 1.05rem;
+  color: var(--cream-dim);
+  margin-bottom: 1.8rem;
+  font-style: italic;
+}
+
+.hero-ctas {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-bottom: 2.5rem;
+}
+
+.hero-branches {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.hero-branch-link {
+  color: var(--cream-dim);
+  text-decoration: none;
+  font-size: 0.88rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: color 0.2s;
+  padding: 0.3rem 0;
+}
+
+.hero-branch-link:active {
+  color: var(--cream);
+}
+
+.hero-branch-link .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--mustard);
+  display: inline-block;
+}
+
+/* ==========================================
+   ABOUT PREVIEW — Mobile (stacked)
+   ========================================== */
+.about-preview {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.about-preview-text h2 {
+  margin-bottom: 0.8rem;
+}
+
+.about-preview-text p {
+  margin-bottom: 1.2rem;
+}
+
+.about-preview-img {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.about-preview-img img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  display: block;
+}
+
+/* ==========================================
+   MENU TICKET CARD — Mobile (single col)
+   ========================================== */
+.ticket-card {
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.ticket-card:hover {
+  border-color: var(--mustard-dim);
+}
+
+.ticket-card-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.ticket-card-body {
+  padding: 1rem 1.1rem;
+}
+
+.ticket-perforation {
+  height: 8px;
+  background-image: radial-gradient(circle, var(--bg) 4px, transparent 4px);
+  background-size: 12px 8px;
+  background-position: 0 4px;
+  background-repeat: repeat-x;
+}
+
+.ticket-tag {
+  font-family: 'JetBrains Mono', monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.65rem;
+  color: var(--mustard-dim);
+  margin-bottom: 0.4rem;
+}
+
+.ticket-name {
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  margin-bottom: 0.3rem;
+}
+
+.ticket-price-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding-top: 0.5rem;
+  border-top: 2px dashed var(--line);
+  margin-top: 0.5rem;
+}
+
+.ticket-price {
+  font-family: 'JetBrains Mono', monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 1rem;
+  color: var(--mustard);
+}
+
+/* --- MENU GRID — 1 column on mobile --- */
+.menu-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.2rem;
+  margin-top: 1.5rem;
+}
+
+/* ==========================================
+   FILTER TABS — Mobile (horizontal scroll)
+   ========================================== */
+.filter-tabs {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  scrollbar-width: none;
+}
+
+.filter-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.filter-tab {
+  padding: 0.55rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: 30px;
+  background: transparent;
+  color: var(--cream-dim);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  min-height: 40px;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.filter-tab:active {
+  border-color: var(--mustard-dim);
+  color: var(--cream);
+}
+
+.filter-tab.active {
+  background: var(--brick);
+  border-color: var(--brick);
+  color: var(--cream);
+}
+
+/* ==========================================
+   LOCATION CARDS — Mobile (stacked)
+   ========================================== */
+.location-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.location-card {
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.location-card h3 {
+  margin-bottom: 0.6rem;
+}
+
+.location-card p {
+  margin-bottom: 0.4rem;
+  font-size: 0.9rem;
+}
+
+.location-card .services {
+  margin-bottom: 0.8rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.location-card .services span {
+  font-family: 'JetBrains Mono', monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.68rem;
+  color: var(--mustard);
+  background: var(--bg-card-hi);
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.map-container {
+  margin-top: 1rem;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 220px;
+  border: 0;
+  display: block;
+}
+
+/* ==========================================
+   HOURS TABLE
+   ========================================== */
+.hours-table {
+  width: 100%;
+  margin: 2rem auto 0;
+  border-collapse: collapse;
+}
+
+.hours-table th,
+.hours-table td {
+  padding: 0.6rem 0.8rem;
+  text-align: left;
+  font-size: 0.88rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.hours-table th {
+  font-family: 'JetBrains Mono', monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.7rem;
+  color: var(--mustard);
+}
+
+.hours-table td:first-child {
+  color: var(--cream);
+  font-weight: 600;
+}
+
+.hours-table td:last-child {
+  color: var(--cream-dim);
+}
+
+/* ==========================================
+   STATS BLOCK — Mobile
+   ========================================== */
+.stats-block {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 2.5rem 0;
+  flex-wrap: wrap;
+}
+
+.stat-item {
+  text-align: center;
+  flex: 1;
+  min-width: 100px;
+}
+
+.stat-number {
+  font-family: 'Fraunces', serif;
+  font-weight: 900;
+  font-size: 2.4rem;
+  color: var(--brick);
+}
+
+.stat-label {
+  font-family: 'JetBrains Mono', monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.7rem;
+  color: var(--cream-dim);
+  margin-top: 0.2rem;
+}
+
+/* ==========================================
+   GALLERY — Mobile (2 columns)
+   ========================================== */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.6rem;
+  margin-top: 1.5rem;
+}
+
+.gallery-item {
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  aspect-ratio: 1 / 1;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* --- LIGHTBOX MODAL --- */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(0, 0, 0, 0.92);
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.lightbox.open {
+  display: flex;
+}
+
+.lightbox img {
+  max-width: 95%;
+  max-height: 80vh;
+  border-radius: 8px;
+  object-fit: contain;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(27, 23, 18, 0.7);
+  border: 1px solid var(--line);
+  color: var(--cream);
+  font-size: 1.6rem;
+  cursor: pointer;
+  line-height: 1;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ==========================================
+   FORMS — Mobile (stacked, full-width)
+   ========================================== */
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  font-family: 'JetBrains Mono', monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.72rem;
+  color: var(--cream-dim);
+  margin-bottom: 0.4rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  color: var(--cream);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1rem;
+  min-height: 48px;
+  transition: border-color 0.2s;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--mustard);
+}
+
+.form-group textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--cream-dim);
+  opacity: 0.5;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+
+.form-submit-area {
+  margin-top: 1.2rem;
+}
+
+.form-msg {
+  margin-top: 1rem;
+  padding: 0.8rem 1rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  display: none;
+}
+
+.form-msg.show {
+  display: block;
+}
+
+.form-msg.success {
+  background: rgba(178, 58, 46, 0.15);
+  border: 1px solid var(--brick);
+  color: var(--cream);
+}
+
+.form-msg.error {
+  background: rgba(178, 58, 46, 0.2);
+  border: 1px solid var(--brick);
+  color: var(--brick-hi);
+}
+
+/* ==========================================
+   CONTACT TABS — Mobile (stacked)
+   ========================================== */
+.contact-tabs {
+  display: flex;
+  gap: 0;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.contact-tab {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: var(--cream-dim);
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+  text-transform: uppercase;
+  min-height: 44px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.contact-tab:active {
+  color: var(--cream);
+}
+
+.contact-tab.active {
+  color: var(--cream);
+  border-bottom-color: var(--brick);
+}
+
+/* --- CONTACT TAB PANELS --- */
+.contact-form-panel {
+  display: none;
+}
+
+.contact-form-panel.active {
+  display: block;
+}
+
+/* ==========================================
+   STAR RATING — Mobile
+   ========================================== */
+.star-rating {
+  display: flex;
+  gap: 0.3rem;
+  margin-top: 0.3rem;
+}
+
+.star-rating button {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: var(--line);
+  cursor: pointer;
+  transition: color 0.15s;
+  line-height: 1;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.star-rating button.filled {
+  color: var(--mustard);
+}
+
+.star-rating button:active {
+  color: var(--mustard);
+}
+
+/* ==========================================
+   CONTACT CARD — Mobile
+   ========================================== */
+.contact-card {
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.contact-card h3 {
+  margin-bottom: 0.8rem;
+}
+
+.contact-detail {
+  margin-bottom: 0.7rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.9rem;
+}
+
+.contact-detail a {
+  color: var(--mustard);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+/* --- SOCIAL LINKS — Mobile (wrap) --- */
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.2rem;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: var(--cream-dim);
+  text-decoration: none;
+  font-size: 0.8rem;
+  padding: 0.4rem 0.8rem;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  transition: border-color 0.2s, color 0.2s;
+  min-height: 36px;
+}
+
+/* ==========================================
+   FOOTER — Mobile
+   ========================================== */
+.site-footer {
+  margin-top: auto;
+  border-top: 1px solid var(--line);
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-brand {
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  margin-bottom: 0.3rem;
+}
+
+.footer-tagline {
+  font-family: 'JetBrains Mono', monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.68rem;
+  color: var(--cream-dim);
+  margin-bottom: 1rem;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.footer-socials a {
+  color: var(--cream-dim);
+  text-decoration: none;
+  font-size: 0.8rem;
+  transition: color 0.2s;
+  padding: 0.3rem 0;
+}
+
+/* ==========================================
+   BOOKING CONFIRM
+   ========================================== */
+.booking-confirm {
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  margin-top: 1.2rem;
+}
+
+.booking-confirm h3 {
+  margin-bottom: 0.6rem;
+  color: var(--cream);
+}
+
+.booking-confirm p {
+  font-size: 0.95rem;
+}
+
+/* ==========================================
+   ABOUT TEXT
+   ========================================== */
+.about-text {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.about-text p {
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+/* ==========================================
+   ==========================================
+   TABLET — 480px (min-width)
+   ==========================================
+   ========================================== */
+@media (min-width: 480px) {
+
+  .hero-content {
+    max-width: 440px;
+  }
+
+  .hero-ctas {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .btn-primary, .btn-ghost {
+    width: auto;
+    display: inline-flex;
+  }
+
+  .hero-branches {
+    flex-direction: row;
+    gap: 1.2rem;
+    justify-content: center;
+  }
+
+  .menu-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .gallery-item {
+    aspect-ratio: 4 / 3;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    font-size: 0.95rem;
+  }
+
+  .contact-tabs {
+    justify-content: center;
+  }
+
+  .contact-tab {
+    flex: none;
+    padding: 0.75rem 1.5rem;
+  }
+}
+
+/* ==========================================
+   ==========================================
+   TABLET — 768px (min-width)
+   ==========================================
+   ========================================== */
+@media (min-width: 768px) {
+
+  .hamburger {
+    display: none;
+  }
+
+  .mobile-nav {
+    display: none !important;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 1.8rem;
+  }
+
+  .nav-links a {
+    color: var(--cream-dim);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.2s;
+    position: relative;
+  }
+
+  .nav-links a:hover,
+  .nav-links a.active {
+    color: var(--cream);
+  }
+
+  .nav-links a.active::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--brick);
+    border-radius: 1px;
+  }
+
+  .header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    height: 72px;
+  }
+
+  .logo-wordmark {
+    font-size: 1.1rem;
+  }
+
+  section {
+    padding: 4rem 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  section.section-alt {
+    max-width: 100%;
+    padding-left: calc((100% - 1200px) / 2 + 1.5rem);
+    padding-right: calc((100% - 1200px) / 2 + 1.5rem);
+  }
+
+  .page-header {
+    padding: 4rem 1.5rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  h1 { font-size: 3rem; }
+  h2 { font-size: 2.2rem; }
+  h3 { font-size: 1.5rem; }
+
+  .hero {
+    min-height: 80vh;
+  }
+
+  .hero-content {
+    max-width: 600px;
+  }
+
+  .hero h1 {
+    font-size: 3.2rem;
+  }
+
+  .hero-tagline {
+    font-size: 1.15rem;
+  }
+
+  .about-preview {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .about-preview-img img {
+    height: 320px;
+  }
+
+  .menu-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .location-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+  }
+
+  .map-container iframe {
+    height: 280px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.8rem;
+  }
+
+  .gallery-item {
+    aspect-ratio: 4 / 3;
+  }
+
+  .stats-block {
+    gap: 3.5rem;
+  }
+
+  .stat-number {
+    font-size: 2.8rem;
+  }
+
+  .contact-card {
+    padding: 2rem;
+  }
+}
+
+/* ==========================================
+   ==========================================
+   DESKTOP — 1024px (min-width)
+   ==========================================
+   ========================================== */
+@media (min-width: 1024px) {
+
+  h1 { font-size: 3.8rem; }
+  h2 { font-size: 2.6rem; }
+
+  .hero h1 {
+    font-size: 4.5rem;
+  }
+
+  .hero-content {
+    max-width: 700px;
+  }
+
+  .nav-links {
+    gap: 2.2rem;
+  }
+
+  .nav-links a {
+    font-size: 0.95rem;
+  }
+
+  .section-alt-padding {
+    padding-left: calc((100% - 1200px) / 2 + 2rem);
+    padding-right: calc((100% - 1200px) / 2 + 2rem);
+  }
+
+  .about-preview-img img {
+    height: 380px;
+  }
+
+  .map-container iframe {
+    height: 300px;
+  }
+}
+
+/* ==========================================
+   ==========================================
+   PREFERS REDUCED MOTION
+   ==========================================
+   ========================================== */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    transition-duration: 0s !important;
+    animation-duration: 0s !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Book a Table — Simple Bistro | Reserve Your Spot</title>
+  <meta name="description" content="Reserve a table at Simple Bistro. Choose Summit or Bole branch in Addis Ababa. Book your spot for flame-grilled burgers.">
+  <meta name="theme-color" content="#1b1712">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta property="og:title" content="Book a Table — Simple Bistro">
+  <meta property="og:description" content="Reserve your spot at Simple Bistro. Summit or Bole — Addis Ababa.">
+  <meta property="og:image" content="images/hero.jpg">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,900&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <div class="logo-mark">SB</div>
+        <span class="logo-wordmark">Simple Bistro</span>
+      </a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="locations.html">Locations</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="book.html" class="active">Book</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-nav">
+    <a href="index.html">Home</a>
+    <a href="menu.html">Menu</a>
+    <a href="locations.html">Locations</a>
+    <a href="about.html">About</a>
+    <a href="book.html">Book</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <div class="page-header">
+    <div class="eyebrow">Reserve</div>
+    <h1>Book a Table</h1>
+    <p>Pick your branch, pick your time. We'll have the grill hot and ready.</p>
+  </div>
+
+  <section style="padding-top:0;max-width:640px;margin:0 auto;">
+    <form id="booking-form" novalidate>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="name">Name *</label>
+          <input type="text" id="name" name="name" placeholder="Your name" required autocomplete="name">
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone *</label>
+          <input type="tel" id="phone" name="phone" placeholder="+251 9X XXX XXXX" required autocomplete="tel">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="branch">Branch *</label>
+        <select id="branch" name="branch" required>
+          <option value="" disabled selected>Choose a branch</option>
+          <option value="Summit">Summit — 2V52+RC9, Addis Ababa</option>
+          <option value="Bole">Bole — Bole area, Addis Ababa</option>
+        </select>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="date">Date *</label>
+          <input type="date" id="date" name="date" required>
+        </div>
+        <div class="form-group">
+          <label for="time">Time *</label>
+          <input type="time" id="time" name="time" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="party">Party Size *</label>
+        <select id="party" name="party" required>
+          <option value="" disabled selected>How many?</option>
+          <option value="1">1 person</option>
+          <option value="2">2 people</option>
+          <option value="3">3 people</option>
+          <option value="4">4 people</option>
+          <option value="5">5 people</option>
+          <option value="6">6 people</option>
+          <option value="7">7 people</option>
+          <option value="8">8 people</option>
+          <option value="9">9 people</option>
+          <option value="10">10+ people</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="notes">Notes</label>
+        <textarea id="notes" name="notes" placeholder="Special requests, allergies, celebrations — let us know!"></textarea>
+      </div>
+
+      <div class="form-submit-area">
+        <button type="submit" class="btn-primary">Reserve My Table</button>
+      </div>
+
+      <div class="form-msg" id="form-msg"></div>
+    </form>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">Simple Bistro</div>
+      <div class="footer-tagline">Addis Ababa, Ethiopia · Serving since 2016</div>
+      <div class="footer-socials">
+        <a href="https://facebook.com/simplebistro2016" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://instagram.com/simplebistro2016" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://t.me/simplebistro" target="_blank" rel="noopener">Telegram</a>
+        <a href="https://www.google.com/maps?q=9.0118,38.8513" target="_blank" rel="noopener">Google Maps</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="nav.js"></script>
+  <script src="booking-form.js"></script>
+</body>
+</html>

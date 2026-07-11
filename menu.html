@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Menu — Simple Bistro Burgers | Addis Ababa</title>
+  <meta name="description" content="Explore Simple Bistro's full menu: Texas Style Burger, BBQ Chicken Wings, House Specials, and Classic Burgers. Flame-grilled in Addis Ababa since 2016.">
+  <meta name="theme-color" content="#1b1712">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta property="og:title" content="Menu — Simple Bistro Burgers">
+  <meta property="og:description" content="Bold burgers, flame-grilled to perfection. See our full menu.">
+  <meta property="og:image" content="images/hero.jpg">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,900&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <div class="logo-mark">SB</div>
+        <span class="logo-wordmark">Simple Bistro</span>
+      </a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html" class="active">Menu</a></li>
+          <li><a href="locations.html">Locations</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="book.html">Book</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-nav">
+    <a href="index.html">Home</a>
+    <a href="menu.html">Menu</a>
+    <a href="locations.html">Locations</a>
+    <a href="about.html">About</a>
+    <a href="book.html">Book</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <div class="page-header">
+    <div class="eyebrow">The Goods</div>
+    <h1>Full Menu</h1>
+    <p>Every item, flame-grilled with real ingredients and real attitude. Pick your flavor, pick your branch, let's go.</p>
+  </div>
+
+  <section style="padding-top:0;">
+    <div class="filter-tabs">
+      <button class="filter-tab active" data-filter="all">All Items</button>
+      <button class="filter-tab" data-filter="signature">Signature</button>
+      <button class="filter-tab" data-filter="wings">Wings</button>
+      <button class="filter-tab" data-filter="house-special">House Special</button>
+      <button class="filter-tab" data-filter="classic">Classic</button>
+    </div>
+
+    <div class="menu-grid">
+
+      <!-- Ticket 01 — Signature -->
+      <div class="ticket-card" data-tag="signature">
+        <img src="grill.jpg" alt="Texas Style Burger" class="ticket-card-img">
+        <div class="ticket-perforation"></div>
+        <div class="ticket-card-body">
+          <div class="ticket-tag">Signature · Ticket 01</div>
+          <div class="ticket-name">Texas Style Burger</div>
+          <div class="ticket-price-row">
+            <span class="ticket-price">680 birr</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ticket 02 — Wings -->
+      <div class="ticket-card" data-tag="wings">
+        <img src="wings.jpg" alt="BBQ Chicken Wing" class="ticket-card-img">
+        <div class="ticket-perforation"></div>
+        <div class="ticket-card-body">
+          <div class="ticket-tag">Wings · Ticket 02</div>
+          <div class="ticket-name">BBQ Chicken Wing</div>
+          <div class="ticket-price-row">
+            <span class="ticket-price">700 birr</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ticket 03 — House Special -->
+      <div class="ticket-card" data-tag="house-special">
+        <img src="cheeseburger.jpg" alt="Chicken Beef Junkie" class="ticket-card-img">
+        <div class="ticket-perforation"></div>
+        <div class="ticket-card-body">
+          <div class="ticket-tag">House Special · Ticket 03</div>
+          <div class="ticket-name">Chicken Beef Junkie</div>
+          <div class="ticket-price-row">
+            <span class="ticket-price">830 birr</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ticket 04 — House Special -->
+      <div class="ticket-card" data-tag="house-special">
+        <img src="classic.jpg" alt="Chicken Junkie" class="ticket-card-img">
+        <div class="ticket-perforation"></div>
+        <div class="ticket-card-body">
+          <div class="ticket-tag">House Special · Ticket 04</div>
+          <div class="ticket-name">Chicken Junkie</div>
+          <div class="ticket-price-row">
+            <span class="ticket-price">850 birr</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ticket 05 — Classic -->
+      <div class="ticket-card" data-tag="classic">
+        <img src="saucy.jpg" alt="Saucy Burger" class="ticket-card-img">
+        <div class="ticket-perforation"></div>
+        <div class="ticket-card-body">
+          <div class="ticket-tag">Classic · Ticket 05</div>
+          <div class="ticket-name">Saucy Burger</div>
+          <div class="ticket-price-row">
+            <span class="ticket-price">630 birr</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ticket 06 — Classic -->
+      <div class="ticket-card" data-tag="classic">
+        <img src="classic.jpg" alt="Normal Burger" class="ticket-card-img">
+        <div class="ticket-perforation"></div>
+        <div class="ticket-card-body">
+          <div class="ticket-tag">Classic · Ticket 06</div>
+          <div class="ticket-name">Normal Burger</div>
+          <div class="ticket-price-row">
+            <span class="ticket-price">550 birr</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ticket 07 — Classic -->
+      <div class="ticket-card" data-tag="classic">
+        <img src="double-cheese.jpg" alt="Double Cheese Burger" class="ticket-card-img">
+        <div class="ticket-perforation"></div>
+        <div class="ticket-card-body">
+          <div class="ticket-tag">Classic · Ticket 07</div>
+          <div class="ticket-name">Double Cheese Burger</div>
+          <div class="ticket-price-row">
+            <span class="ticket-price">650 birr</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ticket 08 — Classic -->
+      <div class="ticket-card" data-tag="classic">
+        <img src="cheeseburger.jpg" alt="Cheese Burger" class="ticket-card-img">
+        <div class="ticket-perforation"></div>
+        <div class="ticket-card-body">
+          <div class="ticket-tag">Classic · Ticket 08</div>
+          <div class="ticket-name">Cheese Burger</div>
+          <div class="ticket-price-row">
+            <span class="ticket-price">600 birr</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">Simple Bistro</div>
+      <div class="footer-tagline">Addis Ababa, Ethiopia · Serving since 2016</div>
+      <div class="footer-socials">
+        <a href="https://facebook.com/simplebistro2016" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://instagram.com/simplebistro2016" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://t.me/simplebistro" target="_blank" rel="noopener">Telegram</a>
+        <a href="https://www.google.com/maps?q=9.0118,38.8513" target="_blank" rel="noopener">Google Maps</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="nav.js"></script>
+  <script src="menu-filter.js"></script>
+</body>
+</html>
