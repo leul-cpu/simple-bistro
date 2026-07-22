@@ -126,49 +126,54 @@ p {
 }
 
 /* ==========================================
-   4. NAVIGATION (Professional Luxury Header)
+   4. NAVIGATION (Floating Glass Capsule Bar)
    ========================================== */
 .site-header {
   position: sticky;
-  top: 0;
+  top: 16px;
   z-index: 100;
-  height: 80px;
-  background: rgba(10, 10, 10, 0.85);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+  height: auto;
+  background: transparent;
+  padding: 0 1rem;
+  margin-bottom: -80px;
   display: flex;
-  align-items: center;
-  transition: background 300ms ease-in-out, height 300ms ease-in-out;
+  justify-content: center;
 }
 
 .header-inner {
-  max-width: 1200px;
+  max-width: 1050px;
   width: 100%;
+  height: 64px;
   margin: 0 auto;
-  padding: 0 clamp(1.5rem, 5vw, 5rem);
+  padding: 0 1.25rem 0 0.85rem;
+  background: rgba(8, 8, 8, 0.25);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(212, 175, 55, 0.18);
+  border-radius: var(--radius-full);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3), 0 0 14px rgba(212, 175, 55, 0.08);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 100%;
+  transition: border-color 300ms ease-in-out, box-shadow 300ms ease-in-out;
+}
+
+.header-inner:hover {
+  border-color: rgba(212, 175, 55, 0.35);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), 0 0 18px rgba(212, 175, 55, 0.18);
 }
 
 .logo {
   display: flex;
   align-items: center;
-  gap: 0.85rem;
+  gap: 0.75rem;
   text-decoration: none;
   color: var(--color-text-bright);
-  transition: opacity 300ms ease-in-out;
-}
-
-.logo:hover {
-  opacity: 0.9;
 }
 
 .logo-mark {
-  width: 40px;
-  height: 40px;
+  width: 38px;
+  height: 38px;
   border-radius: var(--radius-full);
   border: 1.5px solid var(--color-primary);
   display: flex;
@@ -176,22 +181,16 @@ p {
   justify-content: center;
   font-family: 'Cinzel', serif;
   font-weight: 500;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   letter-spacing: 0.05em;
   color: #0a0a0a;
   background: var(--color-primary);
-  box-shadow: 0 0 14px rgba(212, 175, 55, 0.25);
-  transition: transform 300ms ease-in-out, box-shadow 300ms ease-in-out;
-}
-
-.logo:hover .logo-mark {
-  transform: scale(1.05);
-  box-shadow: 0 0 18px rgba(212, 175, 55, 0.4);
+  box-shadow: 0 0 12px rgba(212, 175, 55, 0.3);
 }
 
 .logo-wordmark {
   font-family: 'Cinzel', serif;
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   font-weight: 500;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -202,58 +201,59 @@ p {
 .nav-links {
   display: none;
   list-style: none;
-  gap: 1.25rem;
+  gap: 0.4rem;
   align-items: center;
 }
 
 .nav-links a {
   font-family: 'Inter', sans-serif;
   font-weight: 500;
-  font-size: 13px;
+  font-size: 12.5px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--color-text-main);
   text-decoration: none;
-  padding: 0.5rem 0.85rem;
-  min-height: 40px;
+  padding: 0.45rem 0.95rem;
+  min-height: 38px;
   display: inline-flex;
   align-items: center;
-  position: relative;
-  transition: color 300ms ease-in-out, background 300ms ease-in-out, border-color 300ms ease-in-out;
-  border-radius: var(--radius-sm);
+  transition: all 300ms ease-in-out;
+  border-radius: var(--radius-full);
 }
 
 .nav-links a:hover {
   color: var(--color-text-bright);
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .nav-links a.active {
   color: var(--color-primary);
   background: var(--color-accent-gold-soft);
-  border: 1px solid rgba(212, 175, 55, 0.2);
+  border: 1px solid rgba(212, 175, 55, 0.3);
 }
 
-/* Nav CTA Highlight for "Order Us" link */
+/* Integrated Order Us Capsule Badge */
 .nav-links a[href="book.html"] {
   background: var(--color-primary);
   color: #0a0a0a !important;
   font-weight: 500;
-  padding: 0.55rem 1.25rem;
-  margin-left: 0.5rem;
+  padding: 0.5rem 1.35rem;
+  margin-left: 0.4rem;
+  border-radius: var(--radius-full);
   border: 1px solid var(--color-primary);
-  box-shadow: 0 2px 10px rgba(212, 175, 55, 0.2);
+  box-shadow: 0 2px 12px rgba(212, 175, 55, 0.3);
 }
 
 .nav-links a[href="book.html"]:hover {
   background: #e5c158;
   border-color: #e5c158;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.35);
+  transform: scale(1.03);
+  box-shadow: 0 4px 18px rgba(212, 175, 55, 0.45);
 }
 
 .nav-links a:focus-visible {
   outline: 2px solid var(--color-primary);
-  outline-offset: 4px;
+  outline-offset: 3px;
 }
 
 /* Mobile Hamburger */
@@ -273,7 +273,7 @@ p {
 
 .hamburger span {
   display: block;
-  width: 24px;
+  width: 22px;
   height: 2px;
   background: var(--color-text-bright);
   transition: transform 300ms var(--ease-standard), opacity 300ms;
@@ -295,8 +295,8 @@ p {
   display: none;
   position: fixed;
   inset: 0;
-  top: 80px;
-  background: rgba(10, 10, 10, 0.98);
+  top: 90px;
+  background: rgba(8, 8, 8, 0.3);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   z-index: 99;
@@ -312,7 +312,7 @@ p {
 }
 
 .mobile-nav a {
-  color: var(--color-text-main);
+  color: var(--color-text-bright);
   text-decoration: none;
   font-family: 'Cinzel', serif;
   font-weight: 400;
@@ -323,8 +323,8 @@ p {
   min-height: 44px;
   display: flex;
   align-items: center;
-  transition: color 300ms ease-in-out, border-color 300ms ease-in-out;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  transition: color 300ms ease-in-out;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.1);
   width: 100%;
   max-width: 320px;
   justify-content: center;
@@ -332,7 +332,6 @@ p {
 
 .mobile-nav a:hover, .mobile-nav a.active {
   color: var(--color-primary);
-  border-bottom-color: var(--color-primary);
 }
 
 .mobile-nav a[href="book.html"] {
@@ -342,13 +341,17 @@ p {
   font-weight: 500;
   font-size: 1rem;
   border: none;
+  border-radius: var(--radius-full);
   margin-top: 1rem;
 }
 
 /* ==========================================
    5. HERO SECTION (index.html)
    ========================================== */
-.hero {
+section.hero {
+  max-width: 100% !important;
+  width: 100%;
+  margin: 0;
   position: relative;
   min-height: 100vh;
   display: flex;
@@ -356,7 +359,7 @@ p {
   justify-content: center;
   text-align: center;
   overflow: hidden;
-  padding: clamp(6rem, 12vh, 10rem) clamp(1.5rem, 5vw, 5rem);
+  padding: clamp(6rem, 12vh, 10rem) 1.5rem clamp(3rem, 8vh, 6rem);
   background: var(--color-background);
 }
 
@@ -531,7 +534,7 @@ p {
 /* ==========================================
    10. SPACING & SECTIONS
    ========================================== */
-section {
+section:not(.hero) {
   padding: clamp(3rem, 10vh, var(--space-section)) clamp(1.5rem, 5vw, 5rem);
   max-width: 1200px;
   margin: 0 auto;
@@ -1261,7 +1264,7 @@ section.section-alt {
 }
 
 @media (min-width: 1024px) {
-  section {
+  section:not(.hero) {
     padding: var(--space-section) clamp(1.5rem, 5vw, 5rem);
   }
 }
